@@ -13,7 +13,7 @@ class ApiReporteController extends Controller
     public function index()
     {
         
-        $reportes = Reporte::with('user')->get();
+        $reportes = Reporte::with('user')->orderBy('id', 'desc')->get();
 
         return response()->json(
             $reportes
